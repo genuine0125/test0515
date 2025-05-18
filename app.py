@@ -61,7 +61,6 @@ rgb_vis = s2.visualize(bands=['B4', 'B3', 'B2'], min=0, max=3000)
 class_vis = classified.visualize(min=0, max=9, palette=palette)
 
 # ----------- 顯示地圖（滑動分割） -----------
-Map = geemap.Map(center=center, zoom=15)
 Map.split_map(
     left_layer=geemap.ee_tile_layer(rgb_vis, {}, "RGB"),
     right_layer=geemap.ee_tile_layer(class_vis, {}, "Clustered")
