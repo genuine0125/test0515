@@ -27,7 +27,6 @@ point = ee.Geometry.Point([120.5583462887228, 24.081653403304525])
 # 擷取 Landsat NDVI
 my_img = (
     ee.ImageCollection('COPERNICUS/S2_HARMONIZED')
-    .filterBounds(my_point)
     .filterDate('2021-01-01', '2022-01-01')
     .sort('CLOUDY_PIXEL_PERCENTAGE')
     .first()
