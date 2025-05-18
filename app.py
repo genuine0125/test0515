@@ -24,8 +24,8 @@ st.set_page_config(layout="wide")
 st.title("🌿 彰師大進德校區 Sentinel-2 分群分類")
 
 # ----------- 分析設定 -----------
-center = [24.081653403304525, 120.5583462887228]
-point = ee.Geometry.Point(center)
+point = ee.Geometry.Point([24.081653403304525, 120.5583462887228])
+
 
 # 讀取 Sentinel-2 Harmonized 影像
 s2 = ee.ImageCollection("COPERNICUS/S2_HARMONIZED") \
