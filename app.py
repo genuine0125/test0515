@@ -47,7 +47,7 @@ palette = [
 ]
 labels = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
 
-rgb = s2.visualize(bands=["B4", "B3", "B2"], min=0, max=3000)
+rgb = s2.select(["B4", "B3", "B2"]).visualize(min=0, max=3000)
 clustered = classified.visualize(min=0, max=9, palette=palette)
 
 # -------- 地圖顯示 ----------
