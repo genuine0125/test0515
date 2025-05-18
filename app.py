@@ -25,7 +25,7 @@ st.title("🌍 使用服務帳戶連接 GEE 的 Streamlit App")
 point = ee.Geometry.Point([120.5583462887228, 24.081653403304525])
 
 # 擷取 Landsat NDVI
-my_img = (
+image = (
     ee.ImageCollection('COPERNICUS/S2_HARMONIZED')
     .filterDate('2021-01-01', '2022-01-01')
     .sort('CLOUDY_PIXEL_PERCENTAGE')
@@ -35,12 +35,12 @@ my_img = (
 
 vis_params = {'min':100, 'max': 3500, 'bands': ['B11',  'B8',  'B3']}
 
-my_Map.addLayer(my_img, vis_params, "Sentinel-2")
+my_Map.addLayer(image, vis_params, "Sentinel-2")
 my_Map
 
-geemap.get_info(my_img)
-my_img.get('HYBRID').getInfo()
-my_img.get('CLOUDY_PIXEL_PERCENTAGE').getInfo()
+geemap.get_info(image)
+image.get('HYBRID').getInfo()
+image.get('CLOUDY_PIXEL_PERCENTAGE').getInfo()
 
 # 顯示地圖
 Map = geemap.Map(center=[25.03, 121.56], zoom=10)
