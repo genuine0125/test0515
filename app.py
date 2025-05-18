@@ -35,7 +35,6 @@ my_img = (
 
 vis_params = {'min':100, 'max': 3500, 'bands': ['B11',  'B8',  'B3']}
 
-my_Map.centerObject(my_img, 10)
 my_Map.addLayer(my_img, vis_params, "Sentinel-2")
 my_Map
 
